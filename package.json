@@ -1,0 +1,14 @@
+{
+  "name": "test_zmq",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "cassandra-driver": "^3.0.1",
+    "debug": "~2.2.0",
+    "events": "^1.1.1",
+    "log4js": "^0.6.37",
+    "winston": "^2.2.0",
+    "zmq": "^2.15.3"
+  }
+}
