@@ -13,7 +13,7 @@ export CASSANDRA_PASSWORD=
 export CASSANDRA_EVENTS_KEYSPACE_NAME=simpl_events_production
 </pre>
 
-<b>Start server using:</b> `LOG_LEVEL=INFO node app.js`
+<b>Start server using:</b> `LOG_LEVEL=INFO node server.js`
 <br>
 In a separate tab, <b>start client using:</b> `node client.js`
 <br>
