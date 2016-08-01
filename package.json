@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {},
   "dependencies": {
+    "async": "^2.0.1",
     "cassandra-driver": "^3.0.1",
     "debug": "~2.2.0",
     "events": "^1.1.1",
