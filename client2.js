@@ -26,6 +26,6 @@ socket.on('message', function(data) {
 
 process.on('SIGINT', function() {
   console.log("SIGINT!!!");
-  socket.send(JSON.stringify({'domain':'client_state', 'action':'dead'}));
+  socket.send(JSON.stringify({'domain':'client_heartbeat', 'action':'dead'}));
   socket.close();
 });

@@ -14,8 +14,8 @@ console.log('Connected on '+port);
 
 var req_args = {
   'domain': 'cassandra_query',
-  'query': "SELECT dateOf(event_timestamp) FROM api_events WHERE event_name = 'TransactionChargedEvent' LIMIT 10000",
-  'fetchSize': 10,
+  'query': "SELECT bucket_id, dateOf(event_timestamp) AS d FROM api_events LIMIT 200000",
+  'fetchSize': 5,
 }
 socket.send(JSON.stringify(req_args));
 
@@ -26,6 +26,6 @@ socket.on('message', function(data) {
 
 process.on('SIGINT', function() {
   console.log("Triggering termination signal now.");
-  socket.send(JSON.stringify({'domain':'client_state', 'action':'dead'}));
+  socket.send(JSON.stringify({'domain':'client_heartbeat', 'action':'dead'}));
   socket.close();
 });
