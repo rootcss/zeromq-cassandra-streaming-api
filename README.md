@@ -16,7 +16,7 @@ export CASSANDRA_EVENTS_KEYSPACE_NAME=simpl_events_production
 <b>Start server using:</b> `LOG_LEVEL=INFO node server.js`
 <br>
 In a separate tab, <b>start client using:</b> `node client.js`
-<br>
+<br><br>
 There are several ways you can request for data streams:<br>
 1. <b>cassandra_query</b>
 <pre>
@@ -27,7 +27,7 @@ var req_args = {
 }
 socket.send(JSON.stringify(req_args));
 </pre>
-
+<br>
 2. <b>cassandra_fetch</b>
 <pre>
 var req_args = {
