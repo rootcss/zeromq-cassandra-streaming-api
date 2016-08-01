@@ -16,3 +16,27 @@ export CASSANDRA_EVENTS_KEYSPACE_NAME=simpl_events_production
 <b>Start server using:</b> `LOG_LEVEL=INFO node app.js`
 <br>
 In a separate tab, <b>start client using:</b> `node client.js`
+<br>
+There are several ways you can request for data streams:<br>
+1. <b>cassandra_query</b>
+<pre>
+var req_args = {
+  'domain': 'cassandra_query',
+  'query': "SELECT bucket_id, dateOf(event_timestamp) AS d FROM api_events LIMIT 200000",
+  'fetchSize': 5,
+}
+socket.send(JSON.stringify(req_args));
+</pre>
+
+2. <b>cassandra_fetch</b>
+<pre>
+var req_args = {
+  'domain': 'cassandra_fetch',
+  'from': 'date_2016_02_01',
+  'to': 'date_2016_05_25',
+  'fetchSize': 10,
+}
+socket.send(JSON.stringify(req_args));
+</pre>
+
+Check out sample clients `client.js`, `client2.js`, `client_c_fetch.js` etc.
